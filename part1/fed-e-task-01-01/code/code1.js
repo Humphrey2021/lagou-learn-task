@@ -13,3 +13,10 @@
   }, 10)
 */
 
+const PT = str => new Promise(resolve => setTimeout(() => resolve(str), 10))
+
+let a = 'hello'
+let b = 'lagou'
+let c = 'I ♥ U'
+
+PT(a).then(a => PT(a + b)).then(b => PT(b + c)).then(sum => console.log(sum))
